@@ -61,7 +61,7 @@ local function eject_items(pos, node, player, eject_even_without_pipeworks, layo
 
 	-- Build a list of all the items that builder nodes want to use.
 	local filter_items = {}
-	if layout.builders ~= nil then
+	if layout.builders ~= nil and node_image.meta.inventory.main then
 		for _, node_image in pairs(layout.builders) do
 			filter_items[node_image.meta.inventory.main[1]:get_name()] = true
 		end
